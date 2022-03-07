@@ -1,0 +1,21 @@
+{
+  "name": "dimas-ananda-personalweb",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "description": "Dimas Ananda Personal Web",
+  "author": "Dimas Ananda <traperwaze@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.4",
+    "sass": "^1.49.9",
+    "vite": "^2.8.6"
+  }
+}
