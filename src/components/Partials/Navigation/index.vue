@@ -11,18 +11,18 @@ const capitalizeFirstLetter = (text) => text[0].toUpperCase() + text.slice(1);
 export default {
   data() {
     return {
-      activeNav: window.document.location.pathname.split("/")[1] || "home",
+      activeNav: "home",
     };
   },
 
   created() {
+    this.activeNav = window.document.location.pathname.split("/")[1] || "home";
   },
 
   methods: {
     onNavClick(name) {
-      this.activeNav = name
+      this.activeNav = name;
     },
-
   },
 };
 </script>
