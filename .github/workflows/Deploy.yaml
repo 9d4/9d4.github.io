@@ -13,6 +13,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           yarn install && yarn build
+          cp public/index.html public/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
