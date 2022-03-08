@@ -16,7 +16,6 @@ export default {
   },
 
   created() {
-    // this.activeNav = window.document.location.pathname.split("/")[1];
   },
 
   methods: {
