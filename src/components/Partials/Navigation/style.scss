@@ -1,0 +1,46 @@
+.header__container {
+  border-bottom: 1px solid #bebebe;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 4px 12px;
+}
+
+.header__title {
+  font-size: 19px;
+  text-align: right;
+  padding: 12px 32px;
+}
+
+.header__drawer_button {
+  border: none;
+  background: none;
+  display: none;
+}
+
+.header__nav_drawer ul {
+  padding: 0;
+}
+
+.header__nav_drawer ul li {
+  display: inline;
+}
+
+.header__nav_drawer ul li a {
+  color: #000;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 12px 32px;
+  text-decoration: none;
+}
+
+.header__nav_drawer ul li a.active {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 719px) {
+  .header__drawer_button {
+    display: block;
+  }
+}

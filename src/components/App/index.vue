@@ -1,9 +1,14 @@
-<script setup></script>
+<script setup>
+import Navigation from "../Partials/Navigation/index.vue";
+</script>
 
 <template>
-  <router-view></router-view>
+  <Navigation />
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
 <style lang="scss">
-@import "./index.scss";
+@import "./style.scss";
 </style>

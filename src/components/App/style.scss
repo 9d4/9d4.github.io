@@ -11,8 +11,9 @@ body {
   height: 100%;
 }
 body {
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  // 300,400,500
+  font-family: "Inter", sans-serif;
 }
 img,
 picture,
@@ -40,4 +41,17 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+.font-kumbh {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+@for $i from 1 to 10 {
+  $weight: $i * 100;
+  .font-#{$weight} {
+    font-weight: $weight;
+  }
 }
