@@ -133,10 +133,11 @@ export default {
   background: radial-gradient(
     circle,
     var(--bg-primary) 30%,
-    var(--color-font) 31%,
     var(--color-font) 50%,
+    var(--bg-primary) 31%,
     var(--color-font) 50%
   );
+  // radial-gradient(circle, #000 30%, #fff 31%, #fff 50%, var(--color-font) 50%)
   transform: rotate(45deg);
 }
 
