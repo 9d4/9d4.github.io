@@ -38,7 +38,7 @@ export default {
               <router-link
                 @click="onNavClick(nav.name)"
                 :to="nav.url"
-                :class="{ active: this.activeNav === nav.name }"
+                :class="{ active: activeNav === nav.name }"
               >
                 {{ capitalizeFirstLetter(nav.name) }}
               </router-link>
