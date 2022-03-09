@@ -51,6 +51,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style lang="scss">
 @import "./style.scss";
+@import "./style.dark.scss" (prefers-color-scheme: dark);
 </style>
