@@ -62,10 +62,6 @@ export default {
       return localStorage.setItem("dimanda_theme", "dark");
     },
   },
-
-  watch: {
-    active(newVal) {},
-  },
 };
 </script>
 
