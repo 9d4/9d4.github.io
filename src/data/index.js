@@ -1,7 +1,9 @@
 import HomePage from "../components/Pages/HomePage/index.vue"
+import AboutPage from "../components/Pages/AboutPage/index.vue"
 
 export const routes = [
     { path: "/", component: HomePage },
+    { path: "/about", component: AboutPage },
 ]
 
 export const personalInformation = {

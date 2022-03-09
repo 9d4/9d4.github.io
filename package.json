@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "vue": "^3.2.31",
+    "vue-markdown-render": "^2.0.0",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
