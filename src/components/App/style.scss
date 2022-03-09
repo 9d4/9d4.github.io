@@ -14,6 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   // 300,400,500
   font-family: "Inter", sans-serif;
+  color: var(--color-font);
 }
 img,
 picture,
@@ -29,7 +30,6 @@ textarea,
 select {
   font: inherit;
 }
-p,
 h1,
 h2,
 h3,
@@ -37,6 +37,10 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  margin: 0 0 0.35em;
+}
+p {
+  margin: 0 0 1.15em;
 }
 #root,
 #__next {
@@ -58,17 +62,51 @@ h6 {
 
 // colors
 .dark {
-  --color-primary: #041C32;
-  --color-secondary: #04293A;
+  --color-primary: #041c32;
+  --color-secondary: #04293a;
   --color-accent: #064663;
   --color-font: rgb(243, 243, 243);
-  --bg-primary: #041C32;
+  --bg-primary: #041c32;
 }
 
 .light {
-  --color-primary: #D4ECDD;
-  --color-secondary: #345B63;
-  --color-accent: #152D35;
+  --color-primary: #d4ecdd;
+  --color-secondary: #345b63;
+  --color-accent: #152d35;
   --color-font: rgb(36, 36, 36);
   --bg-primary: #f3f3f3;
+}
+.container {
+  width: 100%;
+  padding-top: 32px;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 }

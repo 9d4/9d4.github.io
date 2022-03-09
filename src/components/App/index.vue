@@ -4,9 +4,9 @@ import Navigation from "../Partials/Navigation/index.vue";
 
 <template>
   <Navigation />
-  <main>
+  <div class="container">
     <router-view></router-view>
-  </main>
+  </div>
 </template>
 
 <style lang="scss">
