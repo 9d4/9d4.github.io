@@ -1,5 +1,7 @@
 .header__container {
+  background-color: var(--color-secondary);
   border-bottom: 1px solid #bebebe;
+  color: var(--color-font);
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 4px 12px;
@@ -9,6 +11,7 @@
   font-size: 19px;
   text-align: right;
   padding: 12px 32px;
+  margin-left: auto;
   word-spacing: 3px;
 }
 
@@ -27,6 +30,7 @@
 }
 
 .header__container .header__nav_drawer ul li a {
+  color: var(--color-font);
   display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -43,4 +47,8 @@
   .header__container .header__drawer_button {
     display: block;
   }
+}
+
+.header__container .header__title_wrapper {
+  display: flex;
 }

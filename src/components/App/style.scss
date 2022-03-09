@@ -55,3 +55,18 @@ h6 {
     font-weight: $weight;
   }
 }
+
+// colors
+.dark {
+  --color-primary: #041C32;
+  --color-secondary: #04293A;
+  --color-accent: #064663;
+  --color-font: rgb(243, 243, 243);
+}
+
+.light {
+  --color-primary: #D4ECDD;
+  --color-secondary: #345B63;
+  --color-accent: #152D35;
+  --color-font: rgb(36, 36, 36);
+}

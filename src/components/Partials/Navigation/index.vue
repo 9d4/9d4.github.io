@@ -1,4 +1,5 @@
 <script setup>
+import ThemeToggle from "../ThemeToggle/index.vue";
 import { personalInformation, navigation } from "../../../data/index.js";
 
 const { name } = personalInformation;
@@ -45,7 +46,10 @@ export default {
             </li>
           </ul>
         </nav>
-        <h1 class="header__title">{{ name }}</h1>
+        <div class="header__title_wrapper">
+          <h1 class="header__title">{{ name }}</h1>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   </div>
@@ -53,5 +57,4 @@ export default {
 
 <style lang="scss">
 @import "./style.scss";
-@import "./style.dark.scss" (prefers-color-scheme: dark);
 </style>
