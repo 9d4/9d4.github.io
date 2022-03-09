@@ -48,7 +48,7 @@ export default {
         </nav>
         <div class="header__title_wrapper">
           <h1 class="header__title">{{ name }}</h1>
-          <ThemeToggle />
+          <ThemeToggle class="header__theme-toggle"/>
         </div>
       </div>
     </header>

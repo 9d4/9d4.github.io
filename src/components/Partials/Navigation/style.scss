@@ -1,5 +1,5 @@
 .header__container {
-  background-color: var(--color-secondary);
+  background-color: var(--bg-primary);
   border-bottom: 1px solid #bebebe;
   color: var(--color-font);
   display: grid;
@@ -13,6 +13,12 @@
   padding: 12px 32px;
   margin-left: auto;
   word-spacing: 3px;
+}
+
+.header__container .header__theme-toggle {
+  padding-right: 32px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .header__container .header__drawer_button {

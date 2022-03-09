@@ -88,8 +88,8 @@ export default {
 }
 
 .theme_switch__container {
-  width: 46px;
-  height: 46px;
+  width: 32px;
+  height: 32px;
   box-sizing: border-box;
   padding: 12px;
   background: none;
@@ -110,11 +110,17 @@ export default {
   transition: transform 0.3s ease-in, opacity 0.2s ease-in 0.1s;
 
   /*  white transparent for Safari  */
+  //   background: radial-gradient(
+  //     circle,
+  //     rgba(0, 0, 0, 0),
+  //     rgba(0, 0, 0, 0) 50%,
+  //     #f0f0f0 50%
+  //   );
   background: radial-gradient(
     circle,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0) 50%,
-    #f0f0f0 50%
+    #fff,
+    var(--color-font) 50%,
+    var(--color-font) 50%
   );
 }
 
@@ -126,10 +132,10 @@ export default {
   height: 100%;
   background: radial-gradient(
     circle,
-    #f0f0f0 30%,
-    rgba(0, 0, 0, 0) 31%,
-    rgba(0, 0, 0, 0) 50%,
-    #f0f0f0 50%
+    var(--bg-primary) 30%,
+    var(--color-font) 31%,
+    var(--color-font) 50%,
+    var(--color-font) 50%
   );
   transform: rotate(45deg);
 }
