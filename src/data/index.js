@@ -11,7 +11,13 @@ export const personalInformation = {
     nickname: "traper",
     pictureUrl: "https://avatars.githubusercontent.com/u/52043756",
     location: "Central Java, Indonesia",
-    desciption: "Software and Web Developer | IoT Maker"
+    desciption: "IoT Maker | Front-End Developer | Back-End Developer | Software Engineer | Electrician ",
+    role: "Software and Web Developer",
+    speaks: [
+        { lang: "Indonesia", flag: "🇮🇩" },
+        { lang: "Javanese", flag: "🇮🇩" },
+        { lang: "English", flag: "🇺🇸" },
+    ]
 }
 
 export const navigation = {

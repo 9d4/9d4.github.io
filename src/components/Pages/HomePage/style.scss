@@ -1,0 +1,72 @@
+.homepage {
+  .personal-info {
+    font-family: "Kumbh Sans", sans-serif;
+    text-align: right;
+
+    .personal-info__photo {
+      border-radius: 100% !important;
+      background-color: var(--bg-primary);
+      box-shadow: 0 0 0 1px var(--color-secondary);
+      width: 150px;
+      height: 150px;
+      float: right;
+      margin-bottom: 16px;
+    }
+
+    .personal-info__name {
+      text-align: right;
+      margin-bottom: 4px;
+    }
+
+    .personal-info__brief {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: end;
+      margin-bottom: 20px;
+
+      span {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: right;
+        margin-inline-start: 19px;
+
+        svg {
+          width: 16px;
+          margin: 0 3px 0 0;
+        }
+      }
+    }
+
+    .personal-info__desc {
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
+
+    .personal-info__speak {
+      text-align: left;
+    }
+  }
+
+  .speak {
+    font-family: "Inter", sans-serif;
+    margin-top: 40px;
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        display: block;
+        margin: 0;
+        margin-bottom: 12px;
+        // padding: 10px 16px;
+        // border-radius: 36px;
+        // border: 1.3px solid var(--color-font);
+      }
+    }
+  }
+}

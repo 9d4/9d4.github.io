@@ -20,8 +20,7 @@ body {
 img,
 picture,
 video,
-canvas,
-svg {
+canvas {
   display: block;
   max-width: 100%;
 }
@@ -69,7 +68,7 @@ li {
   --color-primary: #041c32;
   --color-secondary: #04293a;
   --color-accent: #064663;
-  --color-font: rgb(219, 219, 219);
+  --color-font: rgb(173, 173, 173);
   --bg-primary: #041c32;
   --bg-canvas: #04293a;
 }
@@ -84,11 +83,16 @@ li {
 }
 .container {
   width: 100%;
-  padding-top: 32px;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
+  
+  &.content {
+    padding-top: 32px;
+    border-bottom: solid 1px rgb(173, 173, 173, 0.3);
+    padding-bottom: 16px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -103,16 +107,6 @@ li {
 }
 @media (min-width: 992px) {
   .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
+    max-width: 860px;
   }
 }
