@@ -13,6 +13,7 @@ export default {
   data() {
     return {
       activeNav: "home",
+      drawerOpen: false,
     };
   },
 
@@ -24,6 +25,10 @@ export default {
     onNavClick(name) {
       this.activeNav = name;
     },
+
+    toggleDrawer() {
+      this.drawerOpen = !this.drawerOpen;
+    },
   },
 };
 </script>
@@ -32,8 +37,21 @@ export default {
   <div class="header">
     <header>
       <div class="header__container font-kumbh font-600">
-        <button type="button" class="header__drawer_button">☰</button>
-        <nav class="header__nav_drawer">
+        <button
+          type="button"
+          class="header__drawer_button"
+          @click="toggleDrawer"
+        >
+          ☰
+        </button>
+        <nav class="header__nav_drawer" :class="{ open: drawerOpen }">
+          <button
+            type="button"
+            class="header__drawer_close"
+            @click="toggleDrawer"
+          >
+            &times;
+          </button>
           <ul>
             <li v-for="nav in navs" :key="nav.name">
               <router-link
@@ -48,7 +66,7 @@ export default {
         </nav>
         <div class="header__title_wrapper">
           <h1 class="header__title">{{ name }}</h1>
-          <ThemeToggle class="header__theme-toggle"/>
+          <ThemeToggle class="header__theme-toggle" />
         </div>
       </div>
     </header>
