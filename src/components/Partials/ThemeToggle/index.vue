@@ -9,18 +9,17 @@ export default {
   },
 
   created() {
+    let validThemes = ["light", "dark"];
     let theme = this.getSavedTheme();
 
-    if (theme === null) {
-      theme = this.getSystemScheme();
+    if (!validThemes.includes(theme)) theme = this.getSystemScheme();
+
+    if (theme === "dark") {
+      this.light = false;
     }
 
-    switch (theme) {
-      case "dark":
-        this.light = false;
-        break;
-      default:
-        this.light = true;
+    if (theme === "light") {
+      this.light = true;
     }
 
     this.toggle();
