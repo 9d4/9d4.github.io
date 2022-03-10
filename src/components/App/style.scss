@@ -15,6 +15,7 @@ body {
   // 300,400,500
   font-family: "Inter", sans-serif;
   color: var(--color-font);
+  background-color: var(--bg-canvas);
 }
 img,
 picture,
@@ -67,6 +68,7 @@ p {
   --color-accent: #064663;
   --color-font: rgb(243, 243, 243);
   --bg-primary: #041c32;
+  --bg-canvas: #04293a;
 }
 
 .light {
@@ -75,6 +77,7 @@ p {
   --color-accent: #152d35;
   --color-font: rgb(36, 36, 36);
   --bg-primary: #f3f3f3;
+  --bg-canvas: #f5f5f5;
 }
 .container {
   width: 100%;
