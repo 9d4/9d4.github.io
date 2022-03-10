@@ -13,4 +13,5 @@ import Footer from "../Partials/Footer/index.vue";
 
 <style lang="scss">
 @import "./style.scss";
+@import "./markdown.scss";
 </style>
