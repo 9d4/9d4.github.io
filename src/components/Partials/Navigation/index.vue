@@ -29,6 +29,10 @@ export default {
     toggleDrawer() {
       this.drawerOpen = !this.drawerOpen;
     },
+
+    hideDrawer() {
+      this.drawerOpen = false;
+    }
   },
 };
 </script>
@@ -55,7 +59,7 @@ export default {
           <ul>
             <li v-for="nav in navs" :key="nav.name">
               <router-link
-                @click="onNavClick(nav.name)"
+                @click="onNavClick(nav.name) | hideDrawer()"
                 :to="nav.url"
                 :class="{ active: activeNav === nav.name }"
               >
