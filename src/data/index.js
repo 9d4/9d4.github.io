@@ -86,3 +86,8 @@ export const navigation = {
         }
     ]
 }
+
+export const contents = {
+    about: "/contents/about/about.md",
+    writings: [],
+}

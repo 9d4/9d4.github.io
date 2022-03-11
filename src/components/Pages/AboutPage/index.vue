@@ -1,5 +1,6 @@
 <script setup>
 import VueMarkdown from "vue-markdown-render";
+import {contents} from "../../../data/index.js";
 </script>
 
 <script>
@@ -12,7 +13,7 @@ export default {
   },
   methods: {
     async fetchContent() {
-      const url = "/contents/about/about.md";
+      const url = contents.about;
 
       const content = await fetch(url);
 
