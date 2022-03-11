@@ -1,8 +1,12 @@
 <script setup>
-import { personalInformation } from "../../../data/index.js";
+import { personalInformation, techStacks } from "../../../data/index.js";
+import trzIco from "/assets/icons/trz.ico";
 
 const { desciption, name, location, pictureUrl, role, speaks } =
   personalInformation;
+const { services } = techStacks;
+
+const icons = {}
 </script>
 
 <script>
@@ -57,6 +61,10 @@ export default {};
           <span>{{ s.flag }}</span> {{ s.lang }}
         </li>
       </ul>
+    </div>
+    <div class="tech-stack">
+      <h2>Tech Stack</h2>
+      <img :src="services.lists.github.icon" alt="" />
     </div>
   </main>
 </template>

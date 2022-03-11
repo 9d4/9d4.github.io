@@ -20,6 +20,15 @@ export const personalInformation = {
     ]
 }
 
+export const techStacks = {
+    services: {
+        name: "Services",
+        lists: {
+            github: { name: "Github", icon: "/assets/icons/github-icon.svg" }
+        }
+    }
+}
+
 export const navigation = {
     title: "Dimas Ananda Putra Perdana",
     navs: [
