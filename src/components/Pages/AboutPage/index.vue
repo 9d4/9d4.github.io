@@ -25,10 +25,11 @@ export default {
 </script>
 
 <template>
-  <div>
+  <main class="about">
     <vue-markdown :source="content" />
-  </div>
+  </main>
 </template>
 
-<style></style>
-Markdown
+<style lang="scss">
+@import "./style.scss";
+</style>
