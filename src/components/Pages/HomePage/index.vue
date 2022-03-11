@@ -4,9 +4,6 @@ import trzIco from "/assets/icons/trz.ico";
 
 const { desciption, name, location, pictureUrl, role, speaks } =
   personalInformation;
-const { services } = techStacks;
-
-const icons = {}
 </script>
 
 <script>
@@ -64,7 +61,17 @@ export default {};
     </div>
     <div class="tech-stack">
       <h2>Tech Stack</h2>
-      <img :src="services.lists.github.icon" alt="" />
+      <div class="tech-stack__container">
+        <div
+          class="tech-stack__stack"
+          v-for="stack in techStacks"
+          :key="stack.name"
+        >
+          <div class="tech-stack__stack__title">
+            {{ stack.name }}
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>

@@ -58,6 +58,7 @@
 
     h2 {
       margin-bottom: 16px;
+      font-family: "Kumbh Sans", sans-serif;
     }
 
     ul {
@@ -70,6 +71,27 @@
         // padding: 10px 16px;
         // border-radius: 36px;
         // border: 1.3px solid var(--color-font);
+      }
+    }
+  }
+
+  .tech-stack {
+    h2 {
+      font-family: "Kumbh Sans", sans-serif;
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 16px;
+    }
+
+    &__stack {
+      margin-bottom: 16px;
+      &__title {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        color: var(--color-font-dimmed);
       }
     }
   }
