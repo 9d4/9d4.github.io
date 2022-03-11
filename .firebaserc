@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "dimanda-traper"
+  },
+  "targets": {
+    "dimanda-traper": {
+      "hosting": {
+        "dimanda": [
+          "dimanda"
+        ],
+        "dimanda-traper": [
+          "dimanda-traper"
+        ]
+      }
+    }
+  }
+}
