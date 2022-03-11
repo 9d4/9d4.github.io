@@ -1,6 +1,6 @@
-node_modules
+/node_modules
 /dist/
-firebase.json
-firebase*
-.firebaserc
-.firebase*
+/firebase.json
+/firebase*
+/.firebaserc
+/.firebase*
