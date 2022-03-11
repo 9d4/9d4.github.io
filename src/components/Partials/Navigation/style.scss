@@ -2,7 +2,7 @@
   header {
     .header__container {
       background-color: var(--bg-primary);
-      border-bottom: 1px solid #bebebe;
+      border-bottom: 1px solid var(--nav-border);
       color: var(--color-font);
       display: flex;
       justify-content: space-between;
