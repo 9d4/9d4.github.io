@@ -42,8 +42,7 @@ export const techStacks = {
     languages: {
         name: "Languages",
         lists: {
-            c: { name: "C", icon: "/assets/icons/c.svg" },
-            cpp: { name: "C++", icon: "/assets/icons/c-plusplus.svg" },
+            cpp: { name: "C/C++", icon: "/assets/icons/c-plusplus.svg" },
             go: { name: "Go", icon: "/assets/icons/go.svg" },
             javascript: { name: "Javascript", icon: "/assets/icons/javascript.svg" },
             php: { name: "PHP", icon: "/assets/icons/php.svg" },

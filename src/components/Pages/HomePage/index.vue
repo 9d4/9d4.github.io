@@ -67,8 +67,16 @@ export default {};
           v-for="stack in techStacks"
           :key="stack.name"
         >
-          <div class="tech-stack__stack__title">
+          <p class="tech-stack__stack__title">
             {{ stack.name }}
+          </p>
+          <div
+            class="tech-stack__stack__item"
+            v-for="item in stack.lists"
+            :key="item.name"
+          >
+            <img :src="item.icon" :alt="item.name" />
+            <span>{{ item.name }}</span>
           </div>
         </div>
       </div>
