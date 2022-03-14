@@ -1,8 +1,12 @@
 import HomePage from "../components/Pages/HomePage/index.vue"
+import WritingsPage from "../components/Pages/WritingsPage/index.vue"
+import WritingsSinglePage from "../components/Pages/WritingsSinglePage/index.vue"
 import AboutPage from "../components/Pages/AboutPage/index.vue"
 
 export const routes = [
     { path: "/", component: HomePage },
+    { path: "/writings", component: WritingsPage },
+    { path: "/writings/:slug", component: WritingsSinglePage },
     { path: "/about", component: AboutPage },
 ]
 
@@ -89,5 +93,12 @@ export const navigation = {
 
 export const contents = {
     about: "/contents/about/about.md",
-    writings: [],
+    writings: [
+        {
+            title: "Test Test <h>1</h1>",
+            date: "2022-03-13 08:09",
+            content: "/contents/test.md",
+            slug: "test",
+        }
+    ],
 }
