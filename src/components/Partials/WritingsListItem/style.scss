@@ -1,0 +1,14 @@
+.writing-list-item {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 2.8px;
+  border-bottom-style: dashed;
+  border-bottom-color: var(--writing-item-border);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  color: var(--font-color);
+  text-decoration: none;
+}
