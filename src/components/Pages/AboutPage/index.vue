@@ -1,12 +1,14 @@
 <script setup>
-import VueMarkdown from "vue-markdown-render";
-import {contents} from "../../../data/index.js";
+import Markdown from "../../Partials/Markdown/index.vue";
+import { contents } from "../../../data/index.js";
 </script>
 
 <script>
 export default {
   data() {
-    return { content: "" };
+    return {
+      content: "",
+    };
   },
   created() {
     this.fetchContent();
@@ -27,7 +29,7 @@ export default {
 
 <template>
   <main class="about">
-    <vue-markdown class="markdown-body" :source="content" />
+    <Markdown :content="content" />
   </main>
 </template>
 

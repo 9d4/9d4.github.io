@@ -11,9 +11,10 @@
   "author": "Dimas Ananda <traperwaze@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "highlight.js": "^11.5.0",
     "vue": "^3.2.31",
-    "vue-markdown-render": "^2.0.0",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vue3-markdown-it": "^1.0.10"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.4",

@@ -1,5 +1,5 @@
 <script setup>
-import VueMarkdown from "vue-markdown-render";
+import Markdown from "../../Partials/Markdown/index.vue";
 import { contents } from "../../../data/index.js";
 </script>
 
@@ -22,6 +22,9 @@ export default {
     }
   },
 
+  mounted() {
+  },
+
   methods: {
     async fetchContent() {
       const res = await fetch(this.writing.content);
@@ -29,13 +32,22 @@ export default {
 
       this.content = resText;
     },
+
+    async syncScrollAnchor() {
+      const currentHash = document.location.hash;
+      document.location.hash = "";
+      document.location.hash = currentHash;
+    },
   },
+
 };
 </script>
 
 <template>
   <main class="writings-single">
-    <vue-markdown class="markdown-body" :source="content" />
+    <KeepAlive>
+      <Markdown :content="content" :afterRender="syncScrollAnchor"/>
+    </KeepAlive>
   </main>
 </template>
 
