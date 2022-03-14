@@ -27,7 +27,7 @@ export default {
 
 <template>
   <main class="about">
-    <vue-markdown :source="content" />
+    <vue-markdown class="markdown-body" :source="content" />
   </main>
 </template>
 
