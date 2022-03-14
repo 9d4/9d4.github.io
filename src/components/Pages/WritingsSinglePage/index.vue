@@ -22,9 +22,6 @@ export default {
     }
   },
 
-  mounted() {
-  },
-
   methods: {
     async fetchContent() {
       const res = await fetch(this.writing.content);
@@ -39,14 +36,13 @@ export default {
       document.location.hash = currentHash;
     },
   },
-
 };
 </script>
 
 <template>
   <main class="writings-single">
     <KeepAlive>
-      <Markdown :content="content" :afterRender="syncScrollAnchor"/>
+      <Markdown :content="content" :afterRender="syncScrollAnchor" />
     </KeepAlive>
   </main>
 </template>
