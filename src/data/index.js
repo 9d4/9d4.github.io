@@ -95,7 +95,9 @@ export const pages = {
     home: {},
     writings: {
         title: "Writings",
-        description: "Tempatku mencatat dan menuangkan hal-hal yang ingin kusimpan."
+        description: "Tempatku mencatat dan menuangkan hal-hal yang ingin kusimpan.",
+        notFoundMessage: "Tulisan tidak ditemukan! Bisa jadi sudah dihapus atau link tidak tepat.",
+        notFoundEmoticons: ["🤔", "😕", "😔", "😭", "😟", "😦", "🤷‍♀️", "🤷‍♂️"],
     },
     about: {
         title: "About me",

@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       plugins: [],
+      rendering: true,
     };
   },
   updated() {
@@ -20,6 +21,7 @@ export default {
         this.afterRender();
       }
     }, 500);
+    this.rendering = false;
   },
 };
 </script>
@@ -33,6 +35,9 @@ export default {
     :html="true"
     :highlight="{}"
   />
+  <div v-if="rendering">
+    Rendering content for you...
+  </div>
 </template>
 
 <style></style>
