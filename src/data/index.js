@@ -2,12 +2,14 @@ import HomePage from "../components/Pages/HomePage/index.vue"
 import WritingsPage from "../components/Pages/WritingsPage/index.vue"
 import WritingsSinglePage from "../components/Pages/WritingsSinglePage/index.vue"
 import AboutPage from "../components/Pages/AboutPage/index.vue"
+import NotFound from "../components/Partials/NotFound/index.vue"
 
 export const routes = [
     { path: "/", component: HomePage },
     { path: "/writings", component: WritingsPage },
     { path: "/writings/:slug", component: WritingsSinglePage },
     { path: "/about", component: AboutPage },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
 export const personalInformation = {

@@ -58,7 +58,11 @@ export default {
 <template>
   <main class="writings-single">
     <KeepAlive>
-      <Markdown :content="content" :afterRender="syncScrollAnchor" />
+      <Markdown
+        :content="content"
+        :afterRender="syncScrollAnchor"
+        :notFound="notFound"
+      />
     </KeepAlive>
     <div class="writings-404" v-if="notFound">
       <h1 class="writings-404__emote">{{ getEmoticon() }}</h1>

@@ -8,6 +8,7 @@ export default {
   props: {
     content: String,
     afterRender: Function,
+    notFound: Boolean,
   },
   data() {
     return {
@@ -21,6 +22,7 @@ export default {
         this.afterRender();
       }
     }, 500);
+
     this.rendering = false;
   },
 };
@@ -35,9 +37,7 @@ export default {
     :html="true"
     :highlight="{}"
   />
-  <div v-if="rendering">
-    Rendering content for you...
-  </div>
+  <div v-if="rendering && !notFound">Rendering content for you...</div>
 </template>
 
 <style></style>
