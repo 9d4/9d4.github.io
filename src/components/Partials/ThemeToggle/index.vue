@@ -21,6 +21,8 @@ export default {
       default:
         this.theme.light = true;
     }
+
+    this.toggle();
   },
 
   methods: {
@@ -62,7 +64,6 @@ export default {
     "theme.light"(newVal) {
       this.toggle();
       this.saveTheme();
-      console.log("Asdasd");
     },
   },
 };
