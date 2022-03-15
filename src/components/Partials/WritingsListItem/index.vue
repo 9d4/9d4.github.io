@@ -5,12 +5,23 @@ export default {
   props: {
     writing: Object,
   },
+
+  methods: {
+    formatDate(dateString) {
+      return new Date(dateString).toLocaleDateString(undefined, {
+        year: "2-digit",
+        month: "short",
+        day: "numeric",
+      });
+    },
+  },
 };
 </script>
 
 <template>
   <router-link class="writing-list-item" :to="'/writings/' + writing.slug">
-    <div>{{ writing.title }}</div>
+    <p>{{ writing.title }}</p>
+    <span>{{ formatDate(writing.date) }}</span>
   </router-link>
 </template>
 

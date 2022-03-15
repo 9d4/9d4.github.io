@@ -91,6 +91,17 @@ export const navigation = {
     ]
 }
 
+export const pages = {
+    home: {},
+    writings: {
+        title: "Writings",
+        description: "Tempatku mencatat dan menuangkan hal-hal yang ingin kusimpan."
+    },
+    about: {
+        title: "About me",
+    }
+}
+
 export const contents = {
     about: "/contents/about/about.md",
     writings: [
