@@ -1,39 +1,34 @@
-<script setup></script>
-
 <script>
+import { theme } from "../../../stores/theme.js";
+
 export default {
   data() {
     return {
-      light: true,
+      theme,
     };
   },
 
-  created() {
+  mounted() {
     let validThemes = ["light", "dark"];
     let theme = this.getSavedTheme();
 
     if (!validThemes.includes(theme)) theme = this.getSystemScheme();
 
-    if (theme === "dark") {
-      this.light = false;
+    switch (theme) {
+      case "dark":
+        this.theme.light = false;
+        break;
+      default:
+        this.theme.light = true;
     }
-
-    if (theme === "light") {
-      this.light = true;
-    }
-
-    this.toggle();
   },
 
   methods: {
     onClick() {
-      this.light = !this.light;
-
-      this.toggle();
-      this.saveTheme();
+      this.theme.light = !this.theme.light;
     },
     toggle() {
-      if (!this.light) {
+      if (!this.theme.light) {
         document.body.classList.add("dark");
         document.body.classList.remove("light");
         return;
@@ -56,9 +51,18 @@ export default {
       return localStorage.getItem("dimanda_theme");
     },
     saveTheme() {
-      if (this.light) return localStorage.setItem("dimanda_theme", "light");
+      if (this.theme.light)
+        return localStorage.setItem("dimanda_theme", "light");
 
       return localStorage.setItem("dimanda_theme", "dark");
+    },
+  },
+
+  watch: {
+    "theme.light"(newVal) {
+      this.toggle();
+      this.saveTheme();
+      console.log("Asdasd");
     },
   },
 };
@@ -72,8 +76,8 @@ export default {
       title="Toggle color mode"
       @click="onClick"
     >
-      <div class="light" :class="{ visible: light }"></div>
-      <div class="moon" :class="{ visible: !light }">
+      <div class="light" :class="{ visible: theme.light }"></div>
+      <div class="moon" :class="{ visible: !theme.light }">
         <div class="star"></div>
         <div class="star small"></div>
       </div>
