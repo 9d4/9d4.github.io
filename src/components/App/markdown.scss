@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: dark) {
+body.dark {
   .markdown-body {
     color-scheme: dark;
     --color-prettylights-syntax-comment: #8b949e;
@@ -36,17 +36,17 @@
     --color-fg-subtle: #484f58;
     --color-canvas-default: #0d1117;
     --color-canvas-subtle: #161b22;
-    --color-border-default: #30363d;
-    --color-border-muted: #21262d;
+    --color-border-default: rgb(168, 168, 168);
+    --color-border-muted: rgba(102, 102, 102, 0.418);
     --color-neutral-muted: rgba(110, 118, 129, 0.4);
     --color-accent-fg: #58a6ff;
     --color-accent-emphasis: #1f6feb;
-    --color-attention-subtle: rgba(187, 128, 9, 0.15);
+    --color-attention-subtle: rgba(99, 90, 16, 0.781);
     --color-danger-fg: #f85149;
   }
 }
 
-@media (prefers-color-scheme: light) {
+body.light {
   .markdown-body {
     color-scheme: light;
     --color-prettylights-syntax-comment: #6e7781;
@@ -80,16 +80,16 @@
     --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
     --color-prettylights-syntax-constant-other-reference-link: #0a3069;
     --color-fg-default: #24292f;
-    --color-fg-muted: #57606a;
+    --color-fg-muted: #777777;
     --color-fg-subtle: #6e7781;
     --color-canvas-default: #ffffff;
-    --color-canvas-subtle: #f6f8fa;
-    --color-border-default: #d0d7de;
-    --color-border-muted: hsla(210, 18%, 87%, 1);
+    --color-canvas-subtle: #424242;
+    --color-border-default: #747474;
+    --color-border-muted: rgba(211, 202, 202, 0.829);
     --color-neutral-muted: rgba(175, 184, 193, 0.2);
     --color-accent-fg: #0969da;
     --color-accent-emphasis: #0969da;
-    --color-attention-subtle: #fff8c5;
+    --color-attention-subtle: #fdec6a;
     --color-danger-fg: #cf222e;
   }
 }
@@ -100,8 +100,8 @@
   margin: 0;
   // color: var(--color-fg-default);
   // background-color: var(--color-canvas-default);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -224,9 +224,9 @@
   overflow: hidden;
   background: transparent;
   border-bottom: 1px solid var(--color-border-muted);
-  height: 0.25em;
+  height: 2px;
   padding: 0;
-  margin: 24px 0;
+  margin: 10px 0;
   background-color: var(--color-border-default);
   border: 0;
 }
@@ -764,16 +764,20 @@
 .markdown-body table th,
 .markdown-body table td {
   padding: 6px 13px;
-  border: 1px solid var(--color-border-default);
+  // border: 1px solid var(--color-border-default);
 }
 
-.markdown-body table tr {
-  background-color: var(--color-canvas-default);
+.markdown-body table thead tr {
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.markdown-body table tbody tr {
+  // background-color: var(--color-canvas-default);
   border-top: 1px solid var(--color-border-muted);
 }
 
 .markdown-body table tr:nth-child(2n) {
-  background-color: var(--color-canvas-subtle);
+  // background-color: var(--color-canvas-subtle);
 }
 
 .markdown-body table img {
