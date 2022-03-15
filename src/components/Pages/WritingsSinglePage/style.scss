@@ -1,4 +1,12 @@
 .writings-single {
     min-height: 75vh;
-       
+
+    .writings-404 {
+        text-align: center;
+
+        .writings-404__emote {
+            font-size: 10rem;
+            margin-bottom: 1.5rem;
+        }       
+    }
 }

@@ -1,6 +1,7 @@
 <script setup>
 import Markdown from "../../Partials/Markdown/index.vue";
-import { contents } from "../../../data/index.js";
+import { contents, pages } from "../../../data/index.js";
+const writingsMeta = pages.writings;
 </script>
 
 <script>
@@ -9,6 +10,7 @@ export default {
     return {
       writing: null,
       content: "",
+      notFound: false,
     };
   },
   created() {
@@ -19,14 +21,21 @@ export default {
 
     if (this.writing !== null && this.writing !== undefined) {
       this.fetchContent();
+      return;
     }
+
+    this.notFound = true;
   },
 
   methods: {
     async fetchContent() {
       const res = await fetch(this.writing.content);
-      const resText = await res.text();
 
+      if (res.status !== 200) {
+        this.notFound = true;
+      }
+
+      const resText = await res.text();
       this.content = resText;
     },
 
@@ -34,6 +43,13 @@ export default {
       const currentHash = document.location.hash;
       document.location.hash = "";
       document.location.hash = currentHash;
+    },
+
+    getEmoticon() {
+      const l = pages.writings.notFoundEmoticons.length;
+      const rand = Math.floor(Math.random() * l);
+
+      return pages.writings.notFoundEmoticons[rand];
     },
   },
 };
@@ -44,6 +60,10 @@ export default {
     <KeepAlive>
       <Markdown :content="content" :afterRender="syncScrollAnchor" />
     </KeepAlive>
+    <div class="writings-404" v-if="notFound">
+      <h1 class="writings-404__emote">{{ getEmoticon() }}</h1>
+      <p class="writings-404__message">{{ writingsMeta.notFoundMessage }}</p>
+    </div>
   </main>
 </template>
 
