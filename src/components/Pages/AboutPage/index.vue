@@ -1,6 +1,8 @@
 <script setup>
 import Markdown from "../../Partials/Markdown/index.vue";
-import { contents } from "../../../data/index.js";
+import { contents, pages } from "../../../data/index.js";
+
+const { about } = pages;
 </script>
 
 <script>
@@ -29,6 +31,12 @@ export default {
 
 <template>
   <main class="about">
+    <div class="about-header">
+      <header>
+        <h2 class="about-header__title">{{ about.title }}</h2>
+        <p class="about_header__desc">{{ about.description }}</p>
+      </header>
+    </div>
     <Markdown :content="content" />
   </main>
 </template>

@@ -101,6 +101,7 @@ export const pages = {
     },
     about: {
         title: "About me",
+        description: "Yess, me! In a nutshell."
     }
 }
 

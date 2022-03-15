@@ -1,3 +1,14 @@
 .about {
-    min-height: 75vh;
+  min-height: 75vh;
+
+  .about-header {
+    margin-bottom: 26px;
+
+    header {
+      .about-header__title {
+        font-family: "Kumbh Sans", sans-serif;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
