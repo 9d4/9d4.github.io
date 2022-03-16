@@ -1,4 +1,5 @@
-body.dark {
+body.dark,
+html[theme="dark"] {
   .markdown-body {
     color-scheme: dark;
     --color-prettylights-syntax-comment: #8b949e;
@@ -46,7 +47,8 @@ body.dark {
   }
 }
 
-body.light {
+body.light,
+html[theme="light"] {
   .markdown-body {
     color-scheme: light;
     --color-prettylights-syntax-comment: #6e7781;
