@@ -1,6 +1,10 @@
 <script setup>
 import ThemeToggle from "../ThemeToggle/index.vue";
-import { personalInformation, navigation } from "../../../data/index.js";
+import {
+  navigation,
+  personalInformation,
+  routes,
+} from "../../../data/index.js";
 
 const { name } = personalInformation;
 const { menu, navs } = navigation;
@@ -29,10 +33,18 @@ export default {
 
   methods: {
     refresh() {
-      window.router = router;
       const routeName = router.currentRoute.value.name;
 
       this.activeNav = routeName === "writing" ? "writings" : routeName;
+    },
+
+    getRoutePath(name) {
+      const route = routes.find((route) => route.name === name);
+      if (route !== undefined) {
+        return route.path;
+      }
+
+      return "/";
     },
 
     toggleDrawer() {
@@ -69,10 +81,10 @@ export default {
             <li v-for="(item, key) in menu" :key="key">
               <router-link
                 @click="hideDrawer()"
-                :to="item.url"
+                :to="getRoutePath(item.name)"
                 :class="{ active: activeNav === key }"
               >
-                {{ capitalizeFirstLetter(item.name) }}
+                {{ capitalizeFirstLetter(item.title) }}
               </router-link>
             </li>
           </ul>

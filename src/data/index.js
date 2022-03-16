@@ -77,32 +77,18 @@ export const techStacks = {
 
 export const navigation = {
     title: "Dimas Ananda Putra Perdana",
-    navs: [
-        {
-            name: "home",
-            url: "/",
-        },
-        {
-            name: "writings",
-            url: "/writings",
-        },
-        {
-            name: "about",
-            url: "/about",
-        }
-    ],
     menu: {
         home: {
             name: "home",
-            url: "/",
+            title: "Home",
         },
         writings: {
             name: "writings",
-            url: "/writings",
+            title: "Writings",
         },
         about: {
             name: "about",
-            url: "/about",
+            title: "About",
         }
     }
 }
