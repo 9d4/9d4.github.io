@@ -61,7 +61,7 @@ export default {
 <template>
   <div class="header">
     <header>
-      <div class="header__container font-kumbh font-600">
+      <div class="header__container container font-kumbh font-600">
         <button
           type="button"
           class="header__drawer_button"

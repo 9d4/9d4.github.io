@@ -1,13 +1,14 @@
 .header {
   header {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--nav-border);
+
     .header__container {
-      background-color: var(--bg-primary);
-      border-bottom: 1px solid var(--nav-border);
       color: var(--color-font);
       display: flex;
       justify-content: space-between;
       flex-direction: row-reverse;
-      padding: 4px 12px;
+      padding: 4px 0;
       user-select: none;
 
       .header__title {
@@ -94,7 +95,7 @@
     }
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1080px) {
   .header {
     header {
       .header__container {
