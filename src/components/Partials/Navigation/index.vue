@@ -3,27 +3,36 @@ import ThemeToggle from "../ThemeToggle/index.vue";
 import { personalInformation, navigation } from "../../../data/index.js";
 
 const { name } = personalInformation;
-const { navs } = navigation;
+const { menu, navs } = navigation;
 
 const capitalizeFirstLetter = (text) => text[0].toUpperCase() + text.slice(1);
 </script>
 
 <script>
+import { router } from "../../../main";
+
 export default {
   data() {
     return {
-      activeNav: "home",
+      activeNav: "",
       drawerOpen: false,
     };
   },
 
-  created() {
-    this.activeNav = window.document.location.pathname.split("/")[1] || "home";
+  mounted() {
+    this.refresh();
+
+    router.afterEach(() => {
+      this.refresh();
+    });
   },
 
   methods: {
-    onNavClick(name) {
-      this.activeNav = name;
+    refresh() {
+      window.router = router;
+      const routeName = router.currentRoute.value.name;
+
+      this.activeNav = routeName === "writing" ? "writings" : routeName;
     },
 
     toggleDrawer() {
@@ -32,7 +41,7 @@ export default {
 
     hideDrawer() {
       this.drawerOpen = false;
-    }
+    },
   },
 };
 </script>
@@ -57,13 +66,13 @@ export default {
             &times;
           </button>
           <ul>
-            <li v-for="nav in navs" :key="nav.name">
+            <li v-for="(item, key) in menu" :key="key">
               <router-link
-                @click="onNavClick(nav.name) | hideDrawer()"
-                :to="nav.url"
-                :class="{ active: activeNav === nav.name }"
+                @click="hideDrawer()"
+                :to="item.url"
+                :class="{ active: activeNav === key }"
               >
-                {{ capitalizeFirstLetter(nav.name) }}
+                {{ capitalizeFirstLetter(item.name) }}
               </router-link>
             </li>
           </ul>

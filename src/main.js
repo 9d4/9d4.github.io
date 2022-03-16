@@ -1,19 +1,23 @@
-import { createApp } from "vue"
+import { createApp, ref } from "vue"
 import { createRouter, createWebHistory } from "vue-router"
 import App from "./components/App/index.vue"
 import { routes } from "./data"
 
 document.addEventListener("DOMContentLoaded", main);
 
+export const router = createRouter({
+    history: createWebHistory("/"),
+    routes,
+});
+
 function main() {
     const app = createApp(App)
-    const router = createRouter({
-        history: createWebHistory("/"),
-        routes,
-    })
 
     app.use(router)
-    app.mount(createAppDiv())
+
+    router.isReady().then(() => {
+        app.mount(createAppDiv())
+    });
 }
 
 function createAppDiv() {

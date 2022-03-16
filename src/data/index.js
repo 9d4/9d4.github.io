@@ -5,11 +5,11 @@ import AboutPage from "../components/Pages/AboutPage/index.vue"
 import NotFound from "../components/Partials/NotFound/index.vue"
 
 export const routes = [
-    { path: "/", component: HomePage },
-    { path: "/writings", component: WritingsPage },
-    { path: "/writings/:slug", component: WritingsSinglePage },
-    { path: "/about", component: AboutPage },
-    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+    { name: "home", path: "/", component: HomePage },
+    { name: "writings", path: "/writings", component: WritingsPage },
+    { name: "writing", path: "/writings/:slug", component: WritingsSinglePage },
+    { name: "about", path: "/about", component: AboutPage },
+    { name: "notfound", path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
 export const personalInformation = {
@@ -90,7 +90,21 @@ export const navigation = {
             name: "about",
             url: "/about",
         }
-    ]
+    ],
+    menu: {
+        home: {
+            name: "home",
+            url: "/",
+        },
+        writings: {
+            name: "writings",
+            url: "/writings",
+        },
+        about: {
+            name: "about",
+            url: "/about",
+        }
+    }
 }
 
 export const pages = {
