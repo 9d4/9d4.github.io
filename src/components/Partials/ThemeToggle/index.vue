@@ -30,12 +30,16 @@ export default {
       this.theme.light = !this.theme.light;
     },
     toggle() {
+      const metaThemeEl = document.querySelector("meta[name=theme-color]");
+
       if (!this.theme.light) {
+        metaThemeEl.setAttribute("content", "#04293a");
         document.body.classList.add("dark");
         document.body.classList.remove("light");
         return;
       }
 
+      metaThemeEl.setAttribute("content", "#bebebe");
       document.body.classList.add("light");
       document.body.classList.remove("dark");
     },
