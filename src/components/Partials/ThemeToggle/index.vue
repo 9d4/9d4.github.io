@@ -31,17 +31,20 @@ export default {
     },
     toggle() {
       const metaThemeEl = document.querySelector("meta[name=theme-color]");
+      const htmlEl = document.querySelector("html");
 
       if (!this.theme.light) {
         metaThemeEl.setAttribute("content", "#04293a");
-        document.body.classList.add("dark");
-        document.body.classList.remove("light");
+        htmlEl.setAttribute("theme", "dark");
+        // document.body.classList.add("dark");
+        // document.body.classList.remove("light");
         return;
       }
 
       metaThemeEl.setAttribute("content", "#bebebe");
-      document.body.classList.add("light");
-      document.body.classList.remove("dark");
+      htmlEl.setAttribute("theme", "light");
+      // document.body.classList.add("light");
+      // document.body.classList.remove("dark");
     },
     getSystemScheme() {
       if (

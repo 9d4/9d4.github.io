@@ -64,7 +64,8 @@ li {
 }
 
 // colors
-.dark {
+.dark,
+html[theme="dark"] {
   --color-primary: #041c32;
   --color-secondary: #04293a;
   --color-accent: #064663;
@@ -74,9 +75,14 @@ li {
   --bg-canvas: #04293a;
   --nav-border: #898989;
   --writing-item-border: rgba(139, 139, 139, 0.349);
+
+  &:root {
+    color-scheme: dark;
+  }
 }
 
-.light {
+.light,
+html[theme="light"] {
   --color-primary: #d4ecdd;
   --color-secondary: #345b63;
   --color-accent: #152d35;
@@ -86,14 +92,20 @@ li {
   --bg-canvas: #f5f5f5;
   --nav-border: #b5b5b5;
   --writing-item-border: rgba(139, 139, 139, 0.349);
+  --color-scheme: light;
+
+  &:root {
+    color-scheme: light;
+  }
 }
+
 .container {
   width: 100%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
-  
+
   &.content {
     padding-top: 32px;
     border-bottom: solid 1px rgb(173, 173, 173, 0.3);
