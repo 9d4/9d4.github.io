@@ -8,7 +8,7 @@
       display: flex;
       justify-content: space-between;
       flex-direction: row-reverse;
-      padding: 4px 0;
+      padding: 4px 12px;
       user-select: none;
 
       .header__title {
@@ -101,6 +101,7 @@
       .header__container {
         display: grid;
         grid-template-columns: auto 1fr;
+        padding: 4px 0;
 
         .header__drawer_button {
           display: none;
