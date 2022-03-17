@@ -42,4 +42,6 @@ export default {
   <div v-if="rendering && !notFound">Rendering content for you...</div>
 </template>
 
-<style></style>
+<style lang="scss">
+@import "./markdown.scss";
+</style>
