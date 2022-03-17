@@ -1,8 +1,8 @@
 <script setup>
 import WritingsListItem from "../../Partials/WritingsListItem/index.vue";
-import { contents, pages } from "../../../data/index.js";
+import { pages } from "../../../data/index.js";
+import { writings } from "../../../data/writings.js";
 
-const { writings } = contents;
 const meta = pages.writings;
 </script>
 

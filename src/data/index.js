@@ -133,12 +133,4 @@ export const pages = {
 
 export const contents = {
     about: "/contents/about/about.md",
-    writings: [
-        {
-            title: "Test Test <h>1</h1>",
-            date: "2022-03-13 08:09",
-            content: "/contents/test.md",
-            slug: "test",
-        }
-    ],
 }

@@ -1,6 +1,7 @@
 <script setup>
 import Markdown from "../../Partials/Markdown/index.vue";
-import { contents, pages } from "../../../data/index.js";
+import { pages } from "../../../data/index.js";
+import { writings } from "../../../data/writings.js";
 const writingsMeta = pages.writings;
 </script>
 
@@ -15,9 +16,8 @@ export default {
   },
   created() {
     const { slug } = this.$route.params;
-    const { writings } = contents;
 
-    this.writing = writings.find((w) => w.slug == slug);
+    this.writing = writings[slug];
 
     if (this.writing !== null && this.writing !== undefined) {
       this.fetchContent();
