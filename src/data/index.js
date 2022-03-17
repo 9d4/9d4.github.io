@@ -1,8 +1,10 @@
-import HomePage from "../components/Pages/HomePage/index.vue"
-import WritingsPage from "../components/Pages/WritingsPage/index.vue"
-import WritingsSinglePage from "../components/Pages/WritingsSinglePage/index.vue"
-import AboutPage from "../components/Pages/AboutPage/index.vue"
-import NotFound from "../components/Partials/NotFound/index.vue"
+import { defineAsyncComponent } from "vue"
+
+const HomePage = defineAsyncComponent(() => import("../components/Pages/HomePage/index.vue"))
+const WritingsPage = defineAsyncComponent(() => import("../components/Pages/WritingsPage/index.vue"))
+const WritingsSinglePage = defineAsyncComponent(() => import("../components/Pages/WritingsSinglePage/index.vue"))
+const AboutPage = defineAsyncComponent(() => import("../components/Pages/AboutPage/index.vue"))
+const NotFound = defineAsyncComponent(() => import("../components/Partials/NotFound/index.vue"))
 
 export const routes = [
     { name: "home", path: "/", component: HomePage },
