@@ -1,17 +1,39 @@
 import { defineAsyncComponent } from "vue"
 
-const HomePage = defineAsyncComponent(() => import("../components/Pages/HomePage/index.vue"))
-const WritingsPage = defineAsyncComponent(() => import("../components/Pages/WritingsPage/index.vue"))
-const WritingsSinglePage = defineAsyncComponent(() => import("../components/Pages/WritingsSinglePage/index.vue"))
-const AboutPage = defineAsyncComponent(() => import("../components/Pages/AboutPage/index.vue"))
-const NotFound = defineAsyncComponent(() => import("../components/Partials/NotFound/index.vue"))
+const HomePage = () => import("../components/Pages/HomePage/index.vue");
+const WritingsPage = () => import("../components/Pages/WritingsPage/index.vue");
+const WritingsSinglePage = () => import("../components/Pages/WritingsSinglePage/index.vue");
+const AboutPage = () => import("../components/Pages/AboutPage/index.vue");
+const NotFound = () => import("../components/Partials/NotFound/index.vue");
 
 export const routes = [
-    { name: "home", path: "/", component: HomePage },
-    { name: "writings", path: "/writings", component: WritingsPage },
-    { name: "writing", path: "/writings/:slug", component: WritingsSinglePage },
-    { name: "about", path: "/about", component: AboutPage },
-    { name: "notfound", path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+    {
+        name: "home",
+        path: "/",
+        component: HomePage,
+    },
+    {
+        name: "writings",
+        path: "/writings",
+        component: WritingsPage
+    },
+    {
+        name: "writing",
+        path: "/writings/:slug",
+        component: WritingsSinglePage
+    },
+
+    {
+        name: "about",
+        path: "/about",
+        component: AboutPage
+    },
+    {
+        name: "notfound",
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        component: NotFound
+    },
 ]
 
 export const personalInformation = {
