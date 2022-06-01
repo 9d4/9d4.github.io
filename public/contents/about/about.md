@@ -10,3 +10,5 @@ I've uses C/C++ (novice actually) to create microcontroller stuff, and I've enjo
 - 📫 How to reach me: traperwaze@gmail.com
 - 😄 Pronouns: He/him/his
 - ⚡ Fun fact: Don't get carried away easily
+
+See my resume [here](/cv.pdf).
