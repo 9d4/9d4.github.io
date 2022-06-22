@@ -55,7 +55,7 @@ export default {};
       <h2>I Speak</h2>
       <ul>
         <li v-for="s in speaks" :key="s.lang">
-          <span>{{ s.flag }}</span> {{ s.lang }}
+          {{ s.lang }}
         </li>
       </ul>
     </div>
