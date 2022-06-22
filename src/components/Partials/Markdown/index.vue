@@ -1,8 +1,6 @@
 <script setup>
-import { defineAsyncComponent } from "@vue/runtime-core";
 import "highlight.js/styles/atom-one-dark.css";
-
-const Markdown = defineAsyncComponent(() => import("vue3-markdown-it"));
+import Markdown from "vue3-markdown-it";
 </script>
 
 <script>
