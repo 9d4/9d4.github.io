@@ -1,6 +1,9 @@
 {
   "name": "dimas-ananda-personalweb",
   "version": "0.0.0",
+  "engines": {
+    "yarn": "1.22.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
