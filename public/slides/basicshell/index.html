@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="/revealjs/dist/reset.css">
+		<link rel="stylesheet" href="/revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="/revealjs/dist/theme/moon.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="/revealjs/plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="title" class="vcenter">
+					<h1>SHELL - ENV - PROGRAM</h1>
+					<p>Things you need to know before jump into valley</p>
+				</section>
+
+				<section id="main">
+					<section data-visibility="uncounted"></section>
+					<section 
+						id="sketch-1"
+						class="h-100" 
+						data-transition="fade" 
+						data-auto-animate
+					>
+						<div class="sketch-system" style="grid-column: 2;">
+							<div class="computer" data-id="sketch-computer">
+								<span class="sketch-title" data-id="sketch-computer-title">Computer</span>
+							</div>
+						</div>
+					</section>
+
+					<section 
+						id="sketch-2"
+						class="h-100"
+						data-visibility="uncounted"
+						data-auto-animate
+					>
+						<div class="sketch-system" style="grid-column: 2;">
+							<div class="computer" data-id="sketch-computer">
+								<div class="under-computer" data-id="sketch-under-computer">
+									<div class="hardware" data-id="sketch-under-computer_hardware">
+										<span>Hardware</span>
+									</div>
+								</div>
+								<span class="sketch-title" data-id="sketch-computer-title">Computer</span>
+							</div>
+						</div>
+					</section>
+
+					<section 
+						id="sketch-3"
+						class="h-100"
+						data-visibility="uncounted"
+						data-background="#202020"
+						data-auto-animate
+					>
+						<div class="sketch-system">
+							<div class="computer" data-id="sketch-computer">
+								<div class="under-computer" data-id="sketch-under-computer">
+									<div class="hardware" data-id="sketch-under-computer_hardware">
+										<span>Hardware</span>
+									</div>
+								</div>
+								<span class="sketch-title" data-id="sketch-computer-title">Computer</span>
+							</div>
+						</div>
+						<div class="sketch-explanation" data-id="explanation">
+							<div>
+								<h3>Hardware</h3>
+								<small>Everything you can see and touch</small>
+								<small>e.g. Motherboard, Processor, Printer, etc.</small>
+							</div>
+						</div>
+					</section>
+
+					<section 
+						id="sketch-4"
+						class="h-100"
+						data-visibility="uncounted"
+						data-background="#4e4e4e"
+						data-auto-animate
+					>
+						<div class="sketch-system">
+							<div class="computer" data-id="sketch-computer">
+								<div class="under-computer" data-id="sketch-under-computer">
+									<div class="kernel">
+										<span>Kernel</span>
+									</div>
+									<div class="hardware" data-id="sketch-under-computer_hardware">
+										<span>Hardware</span>
+									</div>
+								</div>
+								<span class="sketch-title">Computer</span>
+							</div>
+						</div>
+						<div class="sketch-explanation" data-id="explanation">
+							<div>
+								<h3>Kernel</h3>
+								<small>A program at the core of a computer's operating system and generally has complete control over everything in the system</small>
+								<small>Simple: <b>Bridge</b> between hardware and software</small>
+							</div>
+						</div>
+					</section>
+
+					<section 
+						id="sketch-5"
+						class="h-100"
+						data-visibility="uncounted"
+						data-background="#232331"
+						data-auto-animate
+					>
+						<div class="sketch-system">
+							<div class="computer" data-id="sketch-computer">
+								<div class="under-computer" data-id="sketch-under-computer">
+									<div class="soft-things">
+										<div>
+											<span>Shell</span>
+										</div>
+										<div>
+											<span>Application</span>
+										</div>
+									</div>
+									<div class="kernel">
+										<span>Kernel</span>
+									</div>
+									<div class="hardware" data-id="sketch-under-computer_hardware">
+										<span>Hardware</span>
+									</div>
+								</div>
+								<span class="sketch-title">Computer</span>
+							</div>
+						</div>
+						<div class="sketch-explanation" data-id="explanation">
+							<div>
+								<h3>Shell</h3>
+								<small>The shell is the mediator or the interface between the end-user and the kernel</small>
+								<small>Simple: <b>Bridge</b> between user and kernel</small>
+							</div>
+						</div>
+					</section>
+
+				</section>
+			</div>
+		</div>
+
+		<script src="/revealjs/dist/reveal.js"></script>
+		<script src="/revealjs/plugin/notes/notes.js"></script>
+		<script src="/revealjs/plugin/markdown/markdown.js"></script>
+		<script src="/revealjs/plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				disableLayout: true,
+				width: 1336,
+				height: 680,
+
+				// Learn about plugins: https:///revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
