@@ -7,7 +7,16 @@
  *     date: "2022-03-13 08:09",
  *     content: "/contents/test.md",
  *     slug: "test",
+ *     unlisted: true | false
  * }
  */
 
-export const writings = {}
+export const writings = {
+  'thp-db': {
+    title: 'Database tl;dr',
+    date: '2022-07-24 18:18',
+    content: '/contents/th/db.md',
+    slug: 'thp-db',
+    unlisted: true,
+  },
+};
