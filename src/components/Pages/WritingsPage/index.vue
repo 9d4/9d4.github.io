@@ -4,6 +4,13 @@ import { pages } from "../../../data/index.js";
 import { writings } from "../../../data/writings.js";
 
 const meta = pages.writings;
+let listedWritings = {};
+
+for (const w in writings) {
+  if (!writings[w]?.unlisted) {
+    listedWritings[w] = writings[w]
+  }
+}
 </script>
 
 <template>
@@ -16,7 +23,7 @@ const meta = pages.writings;
     </div>
     <div class="writings-list">
       <WritingsListItem
-        v-for="writing in writings"
+        v-for="writing in listedWritings"
         :key="writing.slug"
         :writing="writing"
       />
