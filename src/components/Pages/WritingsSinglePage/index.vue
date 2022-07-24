@@ -51,12 +51,24 @@ export default {
 
       return pages.writings.notFoundEmoticons[rand];
     },
+
+    formatDate(dateString) {
+      return new Date(dateString).toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "2-digit"
+      });
+    },
   },
 };
 </script>
 
 <template>
   <main class="writings-single">
+    <div class="writings-header" v-if="!notFound">
+      <h1 class="writings-title">{{ writing.title }}</h1>
+      <small class="writings-date">Written on {{ formatDate(writing.date) }}</small>
+    </div>
     <KeepAlive>
       <Markdown
         :content="content"
