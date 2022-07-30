@@ -21,6 +21,7 @@ export default {
 
     if (this.writing !== null && this.writing !== undefined) {
       this.fetchContent();
+      this.setDocTitle(this.writing.title)
       return;
     }
 
@@ -28,6 +29,10 @@ export default {
   },
 
   methods: {
+    async setDocTitle(title) {
+      document.title = `${title} — ${document.title}`
+    },
+
     async fetchContent() {
       const res = await fetch(this.writing.content);
 
