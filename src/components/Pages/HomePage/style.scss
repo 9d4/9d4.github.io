@@ -2,12 +2,13 @@
   min-height: 75vh;
 
   .personal-info {
-    padding: 11px;
+    padding: 32px;
     font-family: "Kumbh Sans", sans-serif;
     text-align: right;
-    border: 1.5px solid var(--color-accent);
+    // border: 1.5px solid var(--color-accent);
     border-radius: 10px;
     margin-bottom: 40px;
+    background-color: var(--bg-secondary);
 
     .personal-info__photo {
       border-radius: 100% !important;
@@ -27,7 +28,7 @@
     .personal-info__brief {
       display: flex;
       flex-flow: wrap;
-      justify-content: end;
+      justify-content: flex-end;
       margin-bottom: 20px;
 
       span {
@@ -46,7 +47,6 @@
 
     .personal-info__desc {
       font-size: 19px;
-      margin-bottom: 20px;
     }
 
     .personal-info__speak {
