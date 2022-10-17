@@ -19,4 +19,10 @@ export const writings = {
     slug: 'thp-db',
     unlisted: true,
   },
+  'configure-mikrotik-with-ciscoap': {
+    title: 'Configure Mikrotik with Cisco Aironet 3500 Series',
+    date: '2022-10-17 11:03',
+    content: '/contents/configure-mikrotik-with-ciscoap.md',
+    slug: 'configure-mikrotik-with-ciscoap'
+  }
 };
