@@ -19,6 +19,13 @@ export const writings = {
     slug: 'thp-db',
     unlisted: true,
   },
+  'thp-py-smcalc-1': {
+    title: 'Small Calculator Pt.1',
+    date: '2023-01-09 21:40',
+    content: '/contents/th/py-smcalc-1.md',
+    slug: 'thp-py-smcalc-1',
+    unlisted: true,
+  },
   'configure-mikrotik-with-ciscoap': {
     title: 'Configure Mikrotik with Cisco Aironet 3500 Series',
     date: '2022-10-17 11:03',
