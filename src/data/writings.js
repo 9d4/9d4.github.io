@@ -27,7 +27,7 @@ export const writings = {
     unlisted: true,
   },
   'thp-py-smcalc-full': {
-    title: 'Small Calculator Pt.1',
+    title: 'Small Calculator Full',
     date: '2023-01-09 21:40',
     content: '/contents/th/py-smcalc-full.md',
     slug: 'thp-py-smcalc-full',
