@@ -27,6 +27,18 @@ floatNumber = float(ask)
 
 <video src="/contents/th/task_smallcalculator-1.mp4" title="Task: Small Calculator" controls></video>
 
+```
+Masukkan angka: 10
+Masukkan angka: 10
+lagi (y/n)? y
+Masukkan angka: 10
+lagi (y/n)? n
+30
+```
+
+Meminta memasukkan angka 2 kali, kemudian tanya lagi(y/n). Jika jawaban 'y' maka meminta memasukkan angka lagi.
+Begitu seterusnya sampai jawaban 'n' lalu tampilkan hasil.
+
 Untuk membuat kalkulator seperti pada video tersebut, dibutuhkan pengetahuan:
 - While (Perulangan)
 - If
