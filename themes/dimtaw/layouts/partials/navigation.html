@@ -1,0 +1,28 @@
+<div class="header">
+  <header x-data="{ open: false }">
+    <div class="header__container container font-kumbh font-600">
+      <button type="button" class="header__drawer_button" id="drawerToggle" @click="open = !open">
+        ☰
+      </button>
+      <nav class="header__nav_drawer" :class="open ? 'open' : ''">
+        <button type="button" class="header__drawer_close" @click="open = !open">
+          &times;
+        </button>
+        <ul>
+          {{ $current := . }}
+          {{ range site.Menus.main }}
+          <li>
+            {{ $active :=  ($current.IsMenuCurrent "main" .) }}
+            <a href="{{ .URL }}" class="{{ if $active}}active{{end}}">{{ .Title }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+      <div class="header__title_wrapper">
+        <h1 class="header__title">{{ .Site.Title }}</h1>
+        {{/*
+        <ThemeToggle class="header__theme-toggle" /> */}}
+      </div>
+    </div>
+  </header>
+</div>

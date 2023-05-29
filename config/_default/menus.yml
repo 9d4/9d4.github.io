@@ -1,0 +1,4 @@
+main:
+  - title: Home
+    pageRef: /
+    weight: 10
