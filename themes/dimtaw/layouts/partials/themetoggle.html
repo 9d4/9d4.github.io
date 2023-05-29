@@ -1,0 +1,60 @@
+<script>
+  function isDarkSystemScheme() {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  function getDarkThemeState() {
+    return localStorage.getItem("dimanda_theme_dark");
+  }
+
+  function saveDarkThemeState(state) {
+    return localStorage.setItem("dimanda_theme_dark", state);
+  }
+
+  document.addEventListener('alpine:init', () => {
+    const html = document.querySelector('html');
+    Alpine.store('darkMode', {
+      on: false,
+
+      toggle() {
+        this.on = !this.on
+        saveDarkThemeState(this.on)
+        this.apply()
+      },
+      apply() {
+        if (this.on) {
+          html.setAttribute('theme', 'dark')
+          return
+        }
+        html.setAttribute('theme', 'light')
+      }
+    });
+
+    if (getDarkThemeState() !== null) {
+      Alpine.store('darkMode').on = !!getDarkThemeState()
+    }
+
+    if (getDarkThemeState() === null && isDarkSystemScheme()) {
+      Alpine.store('darkMode').on = true
+    }
+
+    Alpine.store('darkMode').apply();
+  })
+</script>
+<div class="theme_switch">
+  <button class="theme_switch__container" aria-label="Toggle color mode" title="Toggle color mode"
+    @click="$store.darkMode.toggle()">
+    <div class="light" :class="!$store.darkMode.on && 'visible'"></div>
+    <div class="moon" :class="$store.darkMode.on && 'visible'">
+      <div class="star"></div>
+      <div class="star small"></div>
+    </div>
+  </button>
+</div>

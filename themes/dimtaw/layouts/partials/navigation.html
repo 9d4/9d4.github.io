@@ -20,8 +20,9 @@
       </nav>
       <div class="header__title_wrapper">
         <h1 class="header__title">{{ .Site.Title }}</h1>
-        {{/*
-        <ThemeToggle class="header__theme-toggle" /> */}}
+        <div class="header__theme-toggle">
+          {{ partial "themetoggle" . }}
+        </div>
       </div>
     </div>
   </header>
