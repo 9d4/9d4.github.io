@@ -1,0 +1,5 @@
+{{ $options := (dict "targetPath" "static/homepage.css" "outputStyle" "compressed" "enableSourceMap" (not
+hugo.IsProduction)) }}
+{{ $style := resources.Get "sass/homepage.scss" | resources.ToCSS $options }}
+{{ $secureStyle := $style | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $secureStyle.RelPermalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
