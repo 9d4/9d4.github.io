@@ -38,7 +38,7 @@
     });
 
     if (getDarkThemeState() !== null) {
-      Alpine.store('darkMode').on = !!getDarkThemeState()
+      Alpine.store('darkMode').on = getDarkThemeState() == 'true'
     }
 
     if (getDarkThemeState() === null && isDarkSystemScheme()) {
