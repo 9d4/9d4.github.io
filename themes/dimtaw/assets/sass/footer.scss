@@ -1,0 +1,15 @@
+.footer {
+  font-family: "Kumbh Sans", sans-serif;
+
+  footer {
+    min-height: 75px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    .footer__copyright {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+    }
+  }
+}
