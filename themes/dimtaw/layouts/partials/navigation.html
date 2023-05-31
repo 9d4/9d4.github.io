@@ -12,7 +12,7 @@
           {{ $current := . }}
           {{ range site.Menus.main }}
           <li>
-            {{ $active :=  ($current.IsMenuCurrent "main" .) }}
+            {{ $active :=  or ($current.IsMenuCurrent "main" .) (eq $current.Section .Identifier) }}
             <a href="{{ .URL }}" class="{{ if $active}}active{{end}}">{{ .Title }}</a>
           </li>
           {{ end }}
