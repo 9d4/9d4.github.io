@@ -1,0 +1,95 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Configure Mikrotik with Cisco Aironet 3500 Series</title><link rel="shortcut icon" href=https://9d4.github.io/me/favicon.ico type=image/x-icon><link rel=stylesheet href=/me/static/main.211c32b25cf1d2d902afd77273ebcbc4dae2cd4342b860bd2b8260563f953f34bf40a8818213d464cb71b095352e1206a0c825c2fd292b60f596e7381cae75d8.css integrity="sha512-IRwyslzx0tkCr9dyc+vLxNrizUNCuGC9K4JgVj+VPzS/QKiBghPUZMtxsJU1LhIGoMglwv0pK2D1luc4HK512A=="><link rel=preconnect href=https://fonts.googleapis.com defer><link rel=preconnect href=https://fonts.gstatic.com crossorigin defer><link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Kumbh+Sans:wght@200;300;400;500;600;700&display=swap" rel=stylesheet defer><link rel=apple-touch-icon sizes=57x57 href=/icons/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=/icons/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=/icons/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=/icons/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=/icons/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=/icons/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=/icons/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=/icons/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=/icons/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=stylesheet href=/me/sass/section-single.77411bc82f83e7e86d469cbde7bef03d65e1b6988919bc5e1a1573d710f93e2ba8abe15f106b124e6cc77c62e37f509950844d53453069a8af0c8a0b703a7eb8.css integrity="sha512-d0EbyC+D5+htRpy9577wPWXhtpiJGbxeGhVz1xD5Piuoq+FfEGsSTmzHfGLjf1CZUIRNU0UwaaivDIoLcDp+uA=="><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></head><body><div class=header><header x-data="{ open: false }"><div class="header__container container font-kumbh font-600"><button type=button class=header__drawer_button id=drawerToggle @click="open = !open">
+☰</button><nav class=header__nav_drawer :class="open ? 'open' : ''"><button type=button class=header__drawer_close @click="open = !open">
+&#215;</button><ul><li><a href=/me/>Home</a></li><li><a href=/me/writings/>Writings</a></li></ul></nav><div class=header__title_wrapper><h1 class=header__title>Dimanda</h1><div class=header__theme-toggle><script>function isDarkSystemScheme(){return!!(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)}function getDarkThemeState(){return localStorage.getItem("dimanda_theme_dark")}function saveDarkThemeState(e){return localStorage.setItem("dimanda_theme_dark",e)}document.addEventListener("alpine:init",()=>{const e=document.querySelector("html");Alpine.store("darkMode",{on:!1,toggle(){this.on=!this.on,saveDarkThemeState(this.on),this.apply()},apply(){if(this.on){e.setAttribute("theme","dark");return}e.setAttribute("theme","light")}}),getDarkThemeState()!==null&&(Alpine.store("darkMode").on=getDarkThemeState()=="true"),getDarkThemeState()===null&&isDarkSystemScheme()&&(Alpine.store("darkMode").on=!0),Alpine.store("darkMode").apply()})</script><div class=theme_switch><button class=theme_switch__container aria-label="Toggle color mode" title="Toggle color mode" @click=$store.darkMode.toggle()><div class=light :class="!$store.darkMode.on && 'visible'"></div><div class=moon :class="$store.darkMode.on && 'visible'"><div class=star></div><div class="star small"></div></div></button></div></div></div></div></header></div><div id=content class="container content"><main class=section-single><div class=section-header v-if=!notFound><h1 class=section-title>Configure Mikrotik with Cisco Aironet 3500 Series</h1><small class=section-date>Written on Monday, Oct 17 2022</small></div><article class="section-content markdown-body"><p>Hey there&mldr;</p><p>I found an old Cisco Aironet 3500 series and I had been wondering for a week maybe how to configure it. It has 2 radios, 2.4GHz and 5GHz, with 3 antennas each.
+Then what I wanted is 3 SSIDs of 2.4GHz and 1 SSID of 5GHz, and every SSID bound with
+a VLAN. But then I&rsquo;m not gonna use the AP with Cisco switch, instead Mikrotik. Mikrotik
+and Cisco have different terms on VLAN things, so how do we make them work together.</p><p>After wandering around in the internet, I found a tutorial that suits with my needs.</p><p>What I found from internet:</p><ul><li><a href=https://www.xfelix.com/2018/05/mikrotik-routeros-work-with-cisco-aironet-ap/>Mikrotik RouterOS work with Cisco Aironet AP</a>.</li><li><a href=https://www.cisco.com/c/en/us/support/docs/wireless-mobility/service-set-identifier-ssid/210516-SSIDs-and-VLANs-configuration-on-Autonom.html>Configure SSIDs and VLANs on Autonomous APs</a></li><li><a href=https://community.cisco.com/t5/wireless-mobility-knowledge-base/multiple-ssid-with-multiple-vlans-configuration-example-on-cisco/ta-p/3118056>Multiple SSID With Multiple VLANs configuration example on Cisco Aironet APs</a></li></ul><p>Let&rsquo;s dive in real quick.</p><h4 id=gears>Gears:</h4><ul><li>Mikrotik RB2011UiAS</li><li>Cisco AP AIR-CAP3502P-C-K9</li></ul><h4 id=what-i-wanted-from-the-ap>What I wanted from the AP:</h4><ul><li><p>2.4GHz: (all authentication is open)</p><ul><li>SSID: &ldquo;Perakitan Hub&rdquo; VLAN: no. It&rsquo;s native</li><li>SSID: &ldquo;Perakitan&rdquo; VLAN: <strong>100</strong></li><li>SSID: &ldquo;Pemrograman&rdquo; VLAN: <strong>300</strong></li></ul></li><li><p>5GHz: (all authentication is open)</p><ul><li>SSID: &ldquo;Engineer&rdquo; VLAN: <strong>20</strong></li></ul></li></ul><h4 id=mikrotik-configuration>Mikrotik Configuration</h4><p>ether1: (internet source natted)</p><p>ether2: (to the AP)</p><ul><li>IP: 192.168.8.1/24 (dhcp enabled)</li><li>VLANS:<ul><li>20: <code>192.163.200.1/24</code> (dhcp enabled)</li><li>100: <code>192.163.100.1/24</code> (dhcp enabled)</li><li>300: <code>192.168.30.1/24</code> (dhcp enabled)</li></ul></li></ul><p><em>Be careful with 168 and 163, they are correct. This setup is really bad actually,
+remember this is just an testing.</em></p><h4 id=cisco-configuration>Cisco Configuration</h4><p>I reset the AP by pressing a button for several seconds in it&rsquo;s back until the light
+blinking. Then just connect the gigabit ethernet to the <code>ether2</code> of mikrotik. The ap
+will try to gain ip from the dhcp server in mikrotik, make sure to enable dhcp server.</p><p>Then how to check that the AP got an IP address? Just check it in the leases in winbox
+or connect via telnet to mikrotik to check it.</p><p>Make sure we can ping the IP of the AP. You can either connect your laptop to the same
+network through a swith hub, or just bridge the <code>ether2</code> with <code>ether3</code>, or make another
+network in another ether, it works though.</p><p>Now let&rsquo;s configure it using telnet.</p><p>Once you connected you&rsquo;ll got like this. Default username and password is <code>Cisco</code>.
+Then enter config mode.</p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>User Access Verification
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Username: Cisco
+</span></span><span style=display:flex><span>Password:
+</span></span><span style=display:flex><span>ap&gt;ena
+</span></span><span style=display:flex><span>Password:
+</span></span><span style=display:flex><span>ap#configure terminal
+</span></span><span style=display:flex><span>Enter configuration commands, one per line.  End with CNTL/Z.
+</span></span><span style=display:flex><span>ap(config)#
+</span></span></code></pre></div><p><strong>Configuring Interface Gigabit Ethernet</strong></p><p>VLAN: 10</p><p>waitt&mldr; We don&rsquo;t have VLAN 10 right? Yesss this is just (I don&rsquo;t know), just do it
+or change it to 1 or whataver. It&rsquo;s native, directly to <code>ether2</code>.</p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#interface GigabitEthernet0.10
+</span></span><span style=display:flex><span>#encapsulation dot1Q 10 native
+</span></span><span style=display:flex><span>#bridge-group 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#interface Dot11Radio0.10
+</span></span><span style=display:flex><span>#encapsulation dot1Q 10 native
+</span></span><span style=display:flex><span>#bridge-group 1
+</span></span></code></pre></div><p>What I understand is, <code>interface GigabitEthernet0.10</code> configuring the sub interface
+of gigabit ethernet 0.10, then assign encapsulation (vlan thing in cisco), native means
+directly connect without vlan (as I understand). Then the bridge-group is like creating
+group <code>1</code> then we&rsquo;ll use it together with the first SSID that I have noted above.</p><p>Then the second group from line 5, is just the same but the interface is the sub interface
+of desired radio interface.</p><p>Let&rsquo;s do another</p><p><strong>VLAN 20</strong></p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#interface GigabitEthernet0.20
+</span></span><span style=display:flex><span>#encapsulation dot1Q 20
+</span></span><span style=display:flex><span>#bridge-group 20
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#interface Dot11Radio0.20
+</span></span><span style=display:flex><span>#encapsulation dot1Q 20
+</span></span><span style=display:flex><span>#bridge-group 20
+</span></span></code></pre></div><p><strong>VLAN 100</strong></p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#interface GigabitEthernet0.100
+</span></span><span style=display:flex><span>#encapsulation dot1Q 100
+</span></span><span style=display:flex><span>#bridge-group 100
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#interface Dot11Radio0.100
+</span></span><span style=display:flex><span>#encapsulation dot1Q 100
+</span></span><span style=display:flex><span>#bridge-group 100
+</span></span></code></pre></div><p><strong>VLAN 300</strong></p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#interface GigabitEthernet0.300
+</span></span><span style=display:flex><span>#encapsulation dot1Q 300
+</span></span><span style=display:flex><span>#bridge-group 30
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#interface Dot11Radio0.300
+</span></span><span style=display:flex><span>#encapsulation dot1Q 300
+</span></span><span style=display:flex><span>#bridge-group 30
+</span></span></code></pre></div><p>Waittt&mldr;. Why the group is 30??? Yes my convention is bad, but 300 is not allowed
+it&rsquo;s more than the max allowed.</p><hr><p>Now let&rsquo;s create the SSIDs</p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#dot11 ssid Perakitan Hub
+</span></span><span style=display:flex><span>#vlan 10
+</span></span><span style=display:flex><span>#authentication open
+</span></span><span style=display:flex><span>#mbssid guest-mode
+</span></span></code></pre></div><p>What I got is line 1 creating SSID(Perakitan Hub), then assign it to VLAN 10,
+no authentication(because I&rsquo;ll use mikrotik hotspot), lastly <code>mbssid</code> is kindof
+<code>multi BSSID</code>.</p><p>Let&rsquo;s do the rest.</p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#dot11 ssid Engineer
+</span></span><span style=display:flex><span>#vlan 20
+</span></span><span style=display:flex><span>#authentication open
+</span></span><span style=display:flex><span>#guest-mode
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#dot11 ssid Perakitan
+</span></span><span style=display:flex><span>#vlan 100
+</span></span><span style=display:flex><span>#authentication open
+</span></span><span style=display:flex><span>#mbssid guest-mode
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#dot11 ssid Pemrograman
+</span></span><span style=display:flex><span>#vlan 300
+</span></span><span style=display:flex><span>#authentication open
+</span></span><span style=display:flex><span>#mbssid guest-mode
+</span></span></code></pre></div><p>If you see the Engineer SSID, I did not use mbssid, because I don&rsquo;t want to use
+it in multi ssid. It&rsquo;ll be assigned to 5GHz radio without other ssid.</p><p>We have created our SSIDs, what next is assigning each SSID to desired radio interface.</p><p>We have 2 radio interfaces, interface <code>Dot11Radio0</code> and <code>Dot11Radio1</code>, they are 2.4GHz and 5GHz
+respectively.</p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#interface Dot11Radio0
+</span></span><span style=display:flex><span>#mbssid
+</span></span><span style=display:flex><span>#ssid Perakitan Hub
+</span></span><span style=display:flex><span>#ssid Perakitan
+</span></span><span style=display:flex><span>#ssid Pemrograman
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#interface Dot11Radio1
+</span></span><span style=display:flex><span>#ssid Engineer
+</span></span></code></pre></div><p>Now i&rsquo;m done.</p><p>But if you find that there are no wifi network broadcasted, then maybe the interface
+still down.</p><div class=highlight><pre tabindex=0 style=color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span>#interface Dot11Radio0
+</span></span><span style=display:flex><span>#no shutdown
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>#interface Dot11Radio1
+</span></span><span style=display:flex><span>#no shutdown
+</span></span></code></pre></div><p>Or maybe the frequency is not correct, so change it. I change the frequency through
+AP web interface, so don&rsquo;t ask me how to do through the IOS Command Line. I don&rsquo;t know.</p><p>That&rsquo;s It. Thank yeww&mldr;.</p></article></main></div><script src=/me/js/main.81cbb31aca5c48b2ee807b45aa0a76ad762a005003d23afeae2c793cc5e62d85510fce200453a0161925f52fc7e5c8f7a62fa08371a0830d4c747724a9241572.js integrity="sha512-gcuzGspcSLLugHtFqgp2rXYqAFAD0jr+rix5PMXmLYVRD84gBFOgFhkl9S/H5cj3pi+gg3Gggw1MdHckqSQVcg=="></script><div class=footer><footer><div class="footer__copyright container"><span>~ Dimanda</span>
+<span>&copy; 2023</span></div></footer></div></body></html>
