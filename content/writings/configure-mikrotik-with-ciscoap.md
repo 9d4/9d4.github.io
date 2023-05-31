@@ -69,7 +69,7 @@ Now let's configure it using telnet.
 Once you connected you'll got like this. Default username and password is `Cisco`.
 Then enter config mode.
 
-```
+```txt
 User Access Verification
 
 Username: Cisco
@@ -88,7 +88,7 @@ VLAN: 10
 waitt... We don't have VLAN 10 right? Yesss this is just (I don't know), just do it
 or change it to 1 or whataver. It's native, directly to `ether2`.
 
-```
+```txt
 #interface GigabitEthernet0.10
 #encapsulation dot1Q 10 native
 #bridge-group 1
@@ -111,7 +111,7 @@ Let's do another
 
 **VLAN 20**
 
-```
+```txt
 #interface GigabitEthernet0.20
 #encapsulation dot1Q 20
 #bridge-group 20
@@ -124,7 +124,7 @@ Let's do another
 
 **VLAN 100**
 
-```
+```txt
 #interface GigabitEthernet0.100
 #encapsulation dot1Q 100
 #bridge-group 100
@@ -136,7 +136,7 @@ Let's do another
 
 **VLAN 300**
 
-```
+```txt
 #interface GigabitEthernet0.300
 #encapsulation dot1Q 300
 #bridge-group 30
@@ -153,7 +153,7 @@ it's more than the max allowed.
 
 Now let's create the SSIDs
 
-```
+```txt
 #dot11 ssid Perakitan Hub
 #vlan 10
 #authentication open
@@ -166,7 +166,7 @@ no authentication(because I'll use mikrotik hotspot), lastly `mbssid` is kindof
 
 Let's do the rest.
 
-```
+```txt
 #dot11 ssid Engineer
 #vlan 20
 #authentication open
@@ -191,7 +191,7 @@ We have created our SSIDs, what next is assigning each SSID to desired radio int
 We have 2 radio interfaces, interface `Dot11Radio0` and `Dot11Radio1`, they are 2.4GHz and 5GHz
 respectively.
 
-```
+```txt
 #interface Dot11Radio0
 #mbssid
 #ssid Perakitan Hub
@@ -207,7 +207,7 @@ Now i'm done.
 But if you find that there are no wifi network broadcasted, then maybe the interface
 still down.
 
-```
+```txt
 #interface Dot11Radio0
 #no shutdown
 

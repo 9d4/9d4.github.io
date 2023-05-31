@@ -1,0 +1,24 @@
+.section-single {
+  min-height: 75vh;
+
+  .section-header {
+    .section-title {
+      margin-bottom: 0.5rem;
+    }
+
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px var(--section-item-border) solid;
+  }
+
+  .section-404 {
+    text-align: center;
+
+    .section-404__emote {
+      font-size: 10rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+@import "./markdown.scss";

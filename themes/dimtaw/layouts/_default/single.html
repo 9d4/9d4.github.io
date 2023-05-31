@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main class="section-single">
+  <div class="section-header" v-if="!notFound">
+    <h1 class="section-title">{{ .Title }}</h1>
+    <small class="section-date">Written on {{ .Date.Format "Monday, Jan 2 2006" }}</small>
+  </div>
+  <article class="section-content markdown-body">
+    {{ .Content }}
+  </article>
+</main>
+{{ end }}
