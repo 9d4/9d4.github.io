@@ -75,7 +75,7 @@ html[theme="dark"] {
   --bg-secondary: #183b4a;
   --bg-canvas: #04293a;
   --nav-border: #898989;
-  --writing-item-border: rgba(139, 139, 139, 0.349);
+  --section-item-border: rgba(139, 139, 139, 0.349);
 
   &:root {
     color-scheme: dark;
@@ -93,7 +93,7 @@ html {
   --bg-secondary: #adadad42;
   --bg-canvas: #f5f5f5;
   --nav-border: #b5b5b5;
-  --writing-item-border: rgba(139, 139, 139, 0.349);
+  --section-item-border: rgba(139, 139, 139, 0.349);
   --color-scheme: light;
 
   &:root {

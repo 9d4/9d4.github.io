@@ -1,0 +1,41 @@
+.section-page {
+  min-height: 75vh;
+
+  .section-header {
+    margin-bottom: 26px;
+
+    header {
+      .section-header__title {
+        font-family: "Kumbh Sans", sans-serif;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.section-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 2.8px;
+  border-bottom-style: dashed;
+  border-bottom-color: var(--section-item-border);
+  color: var(--font-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+
+    span {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    color: var(--color-font-dimmed);
+  }
+}

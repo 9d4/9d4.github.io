@@ -1,11 +1,19 @@
 {{ define "main" }}
-<main>
+<main class="section-page">
   <article>
-    <div class="writings-header">
+    <div class="section-header">
       <header>
-        <h2 class="writings-header__title">{{ .Title }}</h2>
-        <p class="writings_header__desc">{{ .Description }}</p>
+        <h2 class="section-header__title">{{ .Title }}</h2>
+        <p class="section_header__desc">{{ .Description }}</p>
       </header>
+    </div>
+    <div class="section-list">
+      {{ range .Pages }}
+      <a class="section-list-item" href="{{ .Permalink }}">
+        <p>{{ .Title }}</p>
+        <span>{{ .Date.Format "Jan 2, 06" }}</span>
+      </a>
+      {{ end }}
     </div>
   </article>
 </main>
