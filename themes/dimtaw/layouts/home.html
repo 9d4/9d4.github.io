@@ -34,6 +34,25 @@
         </div>
         <div class="personal-info__desc"> {{ $bio.description }} </div>
       </header>
+      <div class="tech-stack">
+        <h2>Tech Stack</h2>
+        <div class="tech-stack__container">
+          {{ range site.Params.techStacks }}
+          <div class="tech-stack__stack" v-for="stack in techStacks" :key="stack.name">
+            <p class="tech-stack__stack__title">
+              {{ .name }}
+            </p>
+            {{ range .lists }}
+            <div class="tech-stack__stack__item">
+              {{ $icon := (resources.Get (print "icons/" .icon)).RelPermalink }}
+              <img src="{{ $icon }}" alt="{{ .name }}" />
+              <span> {{ .name }} </span>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
     </main>
   </div>
   {{- partial "footer" . -}}

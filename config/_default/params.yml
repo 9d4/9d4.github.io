@@ -4,3 +4,65 @@ bio:
   role: Developer
   description: "Hey!👋 Welcome to my profile. Nice to meet you! I'm Dimanda, I'm an independent developer with 3+ years of experience. In the realm of engineering, my ardor lies within the captivating realms of web development, the Internet of Things, electronics, and the ethereal domain of physics. Apart from the engineering world, I am passionate about nature. In my spare time, I indulge my passion for nature by immersing myself in the enchanting depths of the jungle."
   imgUrl: https://avatars.githubusercontent.com/u/52043756
+
+techStacks:
+  buildTools:
+    name: "Build Tools"
+    lists:
+      vite:
+        name: "Vite"
+        icon: "vitejs.svg"
+  framework:
+    name: "Web Framework"
+    lists:
+      laravel:
+        name: "Laravel"
+        icon: "laravel.svg"
+  iot:
+    name: "Internet of Thing"
+    lists:
+      arduino:
+        name: "Arduino"
+        icon: "arduino.svg"
+  languages:
+    name: "Languages"
+    lists:
+      cpp:
+        name: "C/C++"
+        icon: "c-plusplus.svg"
+      go:
+        name: "Go"
+        icon: "go.svg"
+      javascript:
+        name: "Javascript"
+        icon: "javascript.svg"
+      php:
+        name: "PHP"
+        icon: "php.svg"
+  services:
+    name: "Services"
+    lists:
+      github:
+        name: "Github"
+        icon: "github-icon.svg"
+      ifttt:
+        name: "IFTTT"
+        icon: "ifttt.svg"
+  ssg:
+    name: "Static Site Generator"
+    lists:
+      hugo:
+        name: "Hugo"
+        icon: "hugo.svg"
+  ui:
+    name: "UI Framework"
+    lists:
+      vue:
+        name: "Vue.js"
+        icon: "vue.svg"
+  virtualization:
+    name: "Virtualization"
+    lists:
+      docker:
+        name: "Docker"
+        icon: "docker-icon.svg"
