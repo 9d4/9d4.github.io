@@ -2,13 +2,8 @@
   min-height: 75vh;
 
   .personal-info {
-    padding: 32px;
     font-family: "Kumbh Sans", sans-serif;
-    text-align: right;
-    // border: 1.5px solid var(--color-accent);
     border-radius: 10px;
-    margin-bottom: 40px;
-    background-color: var(--bg-secondary);
 
     .personal-info__photo {
       border-radius: 100% !important;
@@ -16,37 +11,37 @@
       box-shadow: 0 0 0 1px var(--color-secondary);
       width: 150px;
       height: 150px;
-      float: right;
       margin-bottom: 16px;
     }
 
     .personal-info__name {
-      text-align: right;
-      margin-bottom: 4px;
+      margin-bottom: 0.1rem;
     }
 
     .personal-info__brief {
       display: flex;
       flex-flow: wrap;
-      justify-content: flex-end;
       margin-bottom: 20px;
+      font-size: 0.8rem;
 
       span {
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
         justify-content: right;
-        margin-inline-start: 19px;
+        margin-inline-end: 0.8rem;
 
         svg {
-          width: 16px;
+          width: 0.8rem;
           margin: 0 3px 0 0;
         }
       }
     }
 
     .personal-info__desc {
-      font-size: 19px;
+      font-family: Inter;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
     }
 
     .personal-info__speak {
