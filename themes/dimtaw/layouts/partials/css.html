@@ -22,3 +22,12 @@ hugo.IsProduction)) }}
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+<!-- section specific style -->
+{{ if eq .Kind "section" }}
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not
+hugo.IsProduction)) }}
+{{ $style := resources.Get "sass/section.scss" | resources.ToCSS }}
+{{ $secureStyle := $style | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $secureStyle.RelPermalink }}" integrity="{{ $secureStyle.Data.Integrity }}">
+{{ end }}
