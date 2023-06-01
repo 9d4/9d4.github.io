@@ -5,7 +5,9 @@
     margin-bottom: 2rem;
     border-bottom: 1px var(--section-item-border) solid; }
     .section-single .section-header .section-title {
-      margin-bottom: 0.5rem; }
+      margin-bottom: 0; }
+    .section-single .section-header .section-date {
+      margin-top: 0.5rem; }
   .section-single .section-404 {
     text-align: center; }
     .section-single .section-404 .section-404__emote {
