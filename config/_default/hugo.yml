@@ -4,3 +4,5 @@ title: Dimanda
 theme: dimtaw
 sectionPagesMenu: main
 copyright: ~ Dimanda
+summaryLength: 50
+enableRobotsTXT: true
