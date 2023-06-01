@@ -2,3 +2,8 @@ main:
   - title: Home
     pageRef: /
     weight: 10
+
+mainend:
+  - title: About
+    pageRef: /about
+    weight: 10

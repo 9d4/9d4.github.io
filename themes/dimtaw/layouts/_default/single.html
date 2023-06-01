@@ -1,8 +1,10 @@
 {{ define "main" }}
 <main class="section-single">
-  <div class="section-header" v-if="!notFound">
+  <div class="section-header">
     <h1 class="section-title">{{ .Title }}</h1>
+    {{ if ne .Type "page" }}
     <small class="section-date">Written on {{ .Date.Format "Monday, Jan 2 2006" }}</small>
+    {{ end }}
   </div>
   <article class="section-content markdown-body">
     {{ .Content }}

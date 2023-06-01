@@ -12,7 +12,13 @@
           {{ $current := . }}
           {{ range site.Menus.main }}
           <li>
-            {{ $active :=  or ($current.IsMenuCurrent "main" .) (eq $current.Section .Identifier) }}
+            {{ $active :=  or ($current.IsMenuCurrent "main" .) (and (eq $current.Section .Identifier) (ne $current.Type "page")) }}
+            <a href="{{ .URL }}" class="{{ if $active}}active{{end}}">{{ .Title }}</a>
+          </li>
+          {{ end }}
+          {{ range site.Menus.mainend }}
+          <li>
+            {{ $active :=  or ($current.IsMenuCurrent "mainend" .) (and (eq $current.Section .Identifier) (ne $current.Type "page")) }}
             <a href="{{ .URL }}" class="{{ if $active}}active{{end}}">{{ .Title }}</a>
           </li>
           {{ end }}

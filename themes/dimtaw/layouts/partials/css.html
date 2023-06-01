@@ -33,7 +33,7 @@ hugo.IsProduction)) }}
 {{ end }}
 
 <!-- section single specific style -->
-{{ if and (ne .Section "") (eq .Kind "page") }}
+{{ if or (eq .Type "page") (and (ne .Section "") (eq .Kind "page")) }}
 {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not
 hugo.IsProduction)) }}
 {{ $style := resources.Get "sass/section-single.scss" | resources.ToCSS }}
