@@ -1,18 +1,14 @@
 {{ $title := .Title }}
 {{ $description := .Description }}
 {{ $keywords := delimit .Keywords "," }}
-
 {{ if eq .Kind "page" }}
 {{ $title = (print .Title " - " site.Title) }}
 {{ $description = .Summary }}
-
-
-
 {{ end }}
-
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
 <meta name="keywords" content="{{ $keywords }}">
 <meta property="og:site_name" content="{{ site.Title }}">
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
+{{ template "_internal/google_analytics.html" . }}
