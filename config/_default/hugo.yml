@@ -1,7 +1,6 @@
 baseURL: http://example.org/
 languageCode: en-us
 title: Dimanda
-theme: dimtaw
 sectionPagesMenu: main
 copyright: ~ Dimanda
 summaryLength: 50
