@@ -4,7 +4,7 @@
     <div class="section-header">
       <header>
         <h2 class="section-header__title">{{ .Title }}</h2>
-        <p class="section_header__desc">{{ .Description }}</p>
+        <p class="section_header__desc">{{ .Description | safeHTML }}</p>
       </header>
     </div>
     <div class="section-list">
