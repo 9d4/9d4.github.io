@@ -15,7 +15,22 @@ techStacks:
       vite:
         name: "Vite"
         icon: "vitejs.svg"
-  framework:
+  databases:
+    name: "Databases"
+    lists:
+      mysql:
+        name: "MySQL/MariaDB"
+        icon: "mysql.svg"
+      postgresql:
+        name: "PostgreSQL"
+        icon: "postgresql.svg"
+  in-memory-database:
+    name: "In-Memory Database"
+    lists:
+      redis:
+        name: "Redis"
+        icon: "redis.svg"
+  web-framework:
     name: "Web Framework"
     lists:
       laravel:
@@ -30,7 +45,7 @@ techStacks:
   languages:
     name: "Languages"
     lists:
-      cpp:
+      z-cpp:
         name: "C/C++"
         icon: "c-plusplus.svg"
       go:
@@ -42,6 +57,12 @@ techStacks:
       php:
         name: "PHP"
         icon: "php.svg"
+  map:
+    name: "Map"
+    lists:
+      mapbox:
+        name: "Mapbox"
+        icon: "mapbox.png"
   services:
     name: "Services"
     lists:
@@ -57,6 +78,12 @@ techStacks:
       hugo:
         name: "Hugo"
         icon: "hugo.svg"
+  swh:
+    name: "Static Web Hosting"
+    lists:
+      firebase:
+        name: "Firebase Hosting"
+        icon: "google-firebase.svg"
   ui:
     name: "UI Framework"
     lists:
@@ -69,3 +96,12 @@ techStacks:
       docker:
         name: "Docker"
         icon: "docker-icon.svg"
+  web-server:
+    name: "Web Server"
+    lists:
+      caddy:
+        name: "Caddy"
+        icon: "caddy.png"
+      nginx:
+        name: "Nginx"
+        icon: "nginx.png"
